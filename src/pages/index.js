@@ -16,10 +16,15 @@ export default function Home() {
         <br />
         because we love people and they inspire us.
       </QuoteSection>
-      {/* <VideoPlayer
+      <VideoPlayer
         src="https://drive.google.com/uc?export=download&id=1E2nfoz76EN-u7BXR4ppK8kjcbhKW0sCK"
         entryRatio={0.3}
-      /> */}
+      />
+      <QuoteSection>
+        We are a creative agency, film production,
+        <br />
+        branded & original content creators.
+      </QuoteSection>
       {/* <HorizontalScrollSection /> */}
     </>
   );

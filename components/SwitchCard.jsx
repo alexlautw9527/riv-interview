@@ -129,7 +129,7 @@ const CardB = styled(Image)`
 //   props.switchStatus === 'cardAUp' ? 'scale(70%) ' : 'scale(100%)'};
 
 function SwitchCard() {
-  const [switchStatus, setSwitchStatus] = useState('cardAUp');
+  const [switchStatus, setSwitchStatus] = useState('cardBUp');
   const [isPlaying, setIsPlaying] = useState(false);
   const animationSet =
     switchStatus === 'cardAUp'
