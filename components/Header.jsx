@@ -5,11 +5,13 @@ import useScrollDirection from '../hooks/useScrollDirection';
 
 const HeaderWrapper = styled.header`
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
-  color: black;
+  color: #000;
+  background-color: #fff;
   font-size: 40px;
   font-weight: 700;
   font-style: italic;
