@@ -1,22 +1,25 @@
-// import Head from 'next/head';
+import Head from 'next/head';
 // import { Inter } from 'next/font/google';
 import Header from '../../components/Header';
 import HorizontalScrollSection from '../../components/HorizontalScrollSection';
-import SwitchCard from '../../components/SwitchCard';
+import SwitchCardSection from '../../components/SwitchCard';
 import QuoteSection from '../../components/QuoteSection';
-import VideoPlayer from '../../components/VideoPlayer';
+import VideoPlayerSection from '../../components/VideoPlayer';
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Film Maker</title>
+      </Head>
       <Header />
-      <SwitchCard />
+      <SwitchCardSection />
       <QuoteSection>
         We love to visualize stories
         <br />
         because we love people and they inspire us.
       </QuoteSection>
-      <VideoPlayer
+      <VideoPlayerSection
         src="https://drive.google.com/uc?export=download&id=1E2nfoz76EN-u7BXR4ppK8kjcbhKW0sCK"
         entryRatio={0.3}
       />
@@ -25,7 +28,7 @@ export default function Home() {
         <br />
         branded & original content creators.
       </QuoteSection>
-      {/* <HorizontalScrollSection /> */}
+      <HorizontalScrollSection />
     </>
   );
 }
