@@ -34,16 +34,16 @@ const Slider = styled.div`
 
 const ImageArr = [Slider1, Slider2, Slider3, Slider4, Slider5, Slider6];
 
-export default function HorizontalScrollSection() {
-  console.log(ImageArr);
+function HorizontalScrollSection() {
   return (
     <HorizontalScroll>
       <CardsContainer>
         {ImageArr.map((img) => (
-          // eslint-disable-next-line react/jsx-key
-          <Slider imgSrc={img.src} />
+          <Slider imgSrc={img.src} key={img.src} />
         ))}
       </CardsContainer>
     </HorizontalScroll>
   );
 }
+
+export default HorizontalScrollSection;

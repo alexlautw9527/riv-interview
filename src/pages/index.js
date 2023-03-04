@@ -1,10 +1,9 @@
 import Head from 'next/head';
-// import { Inter } from 'next/font/google';
 import Header from '../../components/Header';
 import HorizontalScrollSection from '../../components/HorizontalScrollSection';
-import SwitchCardSection from '../../components/SwitchCard';
+import SwitchCardSection from '../../components/SwitchCardSection';
 import QuoteSection from '../../components/QuoteSection';
-import VideoPlayerSection from '../../components/VideoPlayer';
+import VideoPlayerSection from '../../components/VideoPlayerSection';
 
 export default function Home() {
   return (

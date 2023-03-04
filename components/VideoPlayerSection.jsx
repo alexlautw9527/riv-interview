@@ -4,7 +4,8 @@ import useWindowSize from '../hooks/useWindowSize';
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 56.25vw;
+  // 16:9
 `;
 
 const Video = styled.video`
@@ -12,7 +13,7 @@ const Video = styled.video`
   height: 100%;
 `;
 
-export default function VideoPlayer({ src, entryRatio }) {
+function VideoPlayerSection({ src, entryRatio }) {
   const windowSize = useWindowSize();
   const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef(null);
@@ -53,3 +54,5 @@ export default function VideoPlayer({ src, entryRatio }) {
     </Container>
   );
 }
+
+export default VideoPlayerSection;

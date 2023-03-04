@@ -7,14 +7,13 @@ import isPropValid from '@emotion/is-prop-valid';
 import cardAImg from '../public/imgs/switch-card-1.png';
 import cardBImg from '../public/imgs/switch-card-2.png';
 
+// cardA cardB 各有兩個動畫
 const cardAUncovered = keyframes`
   0% {
-    /* transform: scale(70%) ; */
     z-index: 0;
   }
 
   50% {
-    /* transform: scale(70%) translate(-50%, -25%); */
     transform: translate(-50%, -25%);
     z-index: 1;
   }
@@ -45,12 +44,10 @@ const cardACovered = keyframes`
 
 const cardBUncovered = keyframes`
   0% {
-    /* transform: scale(70%) ; */
     z-index: 0;
   }
 
   50% {
-    /* transform: scale(70%) translate(50%, 25%); */
     transform:  translate(50%, 25%);
 
     z-index: 1;
@@ -75,7 +72,6 @@ const cardBCovered = keyframes`
   }
 
   100% {
-    /* transform: scale(70%); */
     z-index: 0;
   }
 `;
@@ -91,7 +87,7 @@ const SwitchAnimation = (props) => css`
   animation-play-state: 'running';
   animation-name: ${props.keyframe};
 `;
-const SectionContainer = styled.div`
+const Container = styled.div`
   position: relative;
   height: 40vw;
   width: 90vw;
@@ -114,9 +110,6 @@ const CardA = styled(Image, {
   ${(props) => props.isPlaying && SwitchAnimation}
 `;
 
-// transform: ${(props) =>
-//   props.switchStatus === 'cardAUp' ? 'scale(100%) ' : 'scale(70%)'};
-
 const CardB = styled(Image, {
   shouldForwardProp: (prop) => isPropValid(prop),
 })`
@@ -131,10 +124,7 @@ const CardB = styled(Image, {
   ${(props) => props.isPlaying && SwitchAnimation}
 `;
 
-// transform: ${(props) =>
-//   props.switchStatus === 'cardAUp' ? 'scale(70%) ' : 'scale(100%)'};
-
-function SwitchCard() {
+function SwitchCardSection() {
   const [switchStatus, setSwitchStatus] = useState('cardBUp');
   const [isPlaying, setIsPlaying] = useState(false);
   const animationSet =
@@ -159,7 +149,7 @@ function SwitchCard() {
   }
   return (
     <div>
-      <SectionContainer>
+      <Container>
         <CardA
           src={cardAImg}
           onClick={() => handleSwitchCard()}
@@ -176,9 +166,9 @@ function SwitchCard() {
           switchStatus={switchStatus}
           onAnimationEnd={() => setIsPlaying(false)}
         />
-      </SectionContainer>
+      </Container>
     </div>
   );
 }
 
-export default SwitchCard;
+export default SwitchCardSection;
