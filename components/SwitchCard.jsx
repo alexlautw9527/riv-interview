@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { keyframes, css } from '@emotion/react';
 import styled from '@emotion/styled';
+import isPropValid from '@emotion/is-prop-valid';
 
 import cardAImg from '../public/imgs/switch-card-1.png';
 import cardBImg from '../public/imgs/switch-card-2.png';
@@ -95,9 +96,12 @@ const SectionContainer = styled.div`
   height: 40vw;
   width: 90vw;
   margin: 0 auto;
+  margin-top: 60px;
 `;
 
-const CardA = styled(Image)`
+const CardA = styled(Image, {
+  shouldForwardProp: (prop) => isPropValid(prop),
+})`
   position: absolute;
   object-fit: contain;
   width: 60vw;
@@ -113,7 +117,9 @@ const CardA = styled(Image)`
 // transform: ${(props) =>
 //   props.switchStatus === 'cardAUp' ? 'scale(100%) ' : 'scale(70%)'};
 
-const CardB = styled(Image)`
+const CardB = styled(Image, {
+  shouldForwardProp: (prop) => isPropValid(prop),
+})`
   position: absolute;
   object-fit: contain;
   width: 50vw;
