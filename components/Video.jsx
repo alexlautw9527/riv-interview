@@ -2,15 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import useWindowSize from '../hooks/useWindowSize';
 
-const Container = styled.div`
-  width: 100vw;
-  height: 56.25vw;
-  // 16:9
-`;
-
 const VideoWrapper = styled.video`
   width: 100%;
-  height: 100%;
 `;
 
 function Video({ src, entryRatio }) {
@@ -48,11 +41,7 @@ function Video({ src, entryRatio }) {
     }
   }, [isVisible]);
 
-  return (
-    <Container>
-      <VideoWrapper src={src} ref={videoRef} muted controls />
-    </Container>
-  );
+  return <VideoWrapper src={src} ref={videoRef} muted controls />;
 }
 
 export default Video;
