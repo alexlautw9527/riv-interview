@@ -105,8 +105,8 @@ const CardA = styled(Image, {
   left: 0;
   z-index: ${(props) => (props.switchStatus === 'cardAUp' ? 1 : 0)};
   transition: transform 500ms;
-
   ${(props) => props.isPlaying && SwitchAnimation}
+  cursor: pointer;
 `;
 
 const CardB = styled(Image, {
@@ -121,6 +121,7 @@ const CardB = styled(Image, {
   z-index: ${(props) => (props.switchStatus === 'cardAUp' ? 0 : 1)};
   transition: transform 500ms;
   ${(props) => props.isPlaying && SwitchAnimation}
+  cursor: pointer;
 `;
 
 function ShuffleCards() {
