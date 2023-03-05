@@ -8,12 +8,12 @@ const Container = styled.div`
   // 16:9
 `;
 
-const Video = styled.video`
+const VideoWrapper = styled.video`
   width: 100%;
   height: 100%;
 `;
 
-function VideoPlayerSection({ src, entryRatio }) {
+function Video({ src, entryRatio }) {
   const windowSize = useWindowSize();
   const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef(null);
@@ -50,9 +50,9 @@ function VideoPlayerSection({ src, entryRatio }) {
 
   return (
     <Container>
-      <Video src={src} ref={videoRef} muted controls />
+      <VideoWrapper src={src} ref={videoRef} muted controls />
     </Container>
   );
 }
 
-export default VideoPlayerSection;
+export default Video;

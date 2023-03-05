@@ -24,17 +24,18 @@ const HorizontalTranslateContainer = styled.div(({ translateX }) => ({
   transform: `translateX(${translateX}px)`,
 }));
 
-const calcDynamicHeight = (objectWidth, objectHeight) => {
+const calcDynamicHeight = (objectWidth) => {
   const vw = window.innerWidth;
+  const vh = window.innerHeight;
 
-  // 新增的高度為: 總長度 - 視窗寬度 + 物體高度 + 150px 緩衝
-  return objectWidth - vw + objectHeight + 150;
+  // 新增的高度為: 總長度 - 視窗寬度 + 視窗高度 + 150px 緩衝
+  return objectWidth - vw + vh + 150;
 };
 
 const handleDynamicHeight = (ref, setDynamicHeight) => {
   const objectWidth = ref.current.scrollWidth;
-  const objectHeight = ref.current.scrollHeight;
-  const dynamicHeight = calcDynamicHeight(objectWidth, objectHeight);
+
+  const dynamicHeight = calcDynamicHeight(objectWidth);
   setDynamicHeight(dynamicHeight);
 };
 

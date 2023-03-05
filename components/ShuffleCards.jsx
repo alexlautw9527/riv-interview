@@ -37,7 +37,6 @@ const cardACovered = keyframes`
   }
 
   100% {
-    /* transform: scale(70%); */
     z-index: 0;
   }
 `;
@@ -124,7 +123,7 @@ const CardB = styled(Image, {
   ${(props) => props.isPlaying && SwitchAnimation}
 `;
 
-function SwitchCardSection() {
+function ShuffleCards() {
   const [switchStatus, setSwitchStatus] = useState('cardBUp');
   const [isPlaying, setIsPlaying] = useState(false);
   const animationSet =
@@ -171,4 +170,4 @@ function SwitchCardSection() {
   );
 }
 
-export default SwitchCardSection;
+export default ShuffleCards;

@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Header from '../../components/Header';
-import HorizontalScrollSection from '../../components/HorizontalScrollSection';
-import SwitchCardSection from '../../components/SwitchCardSection';
+import HorizontalCards from '../../components/HorizontalCards';
+import ShuffleCards from '../../components/ShuffleCards';
 import QuoteSection from '../../components/QuoteSection';
-import VideoPlayerSection from '../../components/VideoPlayerSection';
+import Video from '../../components/Video';
 
 export default function Home() {
   return (
@@ -12,13 +12,13 @@ export default function Home() {
         <title>Film Maker</title>
       </Head>
       <Header />
-      <SwitchCardSection />
+      <ShuffleCards />
       <QuoteSection>
         We love to visualize stories
         <br />
         because we love people and they inspire us.
       </QuoteSection>
-      <VideoPlayerSection
+      <Video
         src="https://drive.google.com/uc?export=download&id=1E2nfoz76EN-u7BXR4ppK8kjcbhKW0sCK"
         entryRatio={0.3}
       />
@@ -27,7 +27,7 @@ export default function Home() {
         <br />
         branded & original content creators.
       </QuoteSection>
-      <HorizontalScrollSection />
+      <HorizontalCards />
     </>
   );
 }
