@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import HorizontalScroll from './HorizontalScroll';
 
 import {
@@ -21,15 +22,12 @@ const CardsContainer = styled.div`
   align-items: center;
 `;
 
-const Slider = styled.div`
+const Slider = styled(Image)`
   position: relative;
   height: 600px;
   width: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: ${(props) => `url(${props.imgSrc})`};
+  object-fit: cover;
   margin-right: 75px;
-  flex-shrink: 0;
 `;
 
 const ImageArr = [Slider1, Slider2, Slider3, Slider4, Slider5, Slider6];
@@ -39,7 +37,13 @@ function HorizontalScrollSection() {
     <HorizontalScroll>
       <CardsContainer>
         {ImageArr.map((img) => (
-          <Slider imgSrc={img.src} key={img.src} />
+          <Slider
+            src={img.src}
+            key={img.src}
+            priority
+            width={300}
+            height={600}
+          />
         ))}
       </CardsContainer>
     </HorizontalScroll>

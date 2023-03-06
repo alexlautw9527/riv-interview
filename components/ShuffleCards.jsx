@@ -157,6 +157,7 @@ function ShuffleCards() {
           keyframe={animationSet.cardA}
           switchStatus={switchStatus}
           onAnimationEnd={() => setIsPlaying(false)}
+          priority
         />
         <CardB
           src={cardBImg}
@@ -165,6 +166,7 @@ function ShuffleCards() {
           keyframe={animationSet.cardB}
           switchStatus={switchStatus}
           onAnimationEnd={() => setIsPlaying(false)}
+          priority
         />
       </Container>
     </div>
