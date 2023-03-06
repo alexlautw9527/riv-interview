@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const QuoteWrapper = styled.div`
+  padding: 0 32px;
   height: 100vh;
   display: flex;
   text-align: center;
